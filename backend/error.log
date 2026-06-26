@@ -1,0 +1,2062 @@
+[2026-06-23T23:50:50.262Z] POST /api/v1/users - Status: 400 - Error: El usuario ya existe
+Stack: Error: El usuario ya existe
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\UserController.js:36:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-23T23:50:50.484Z] POST /api/v1/roles - Status: 409 - Error: Registro duplicado. Ya existe un documento con este valor.
+Stack: MongoServerError: E11000 duplicate key error collection: medpro.roles index: name_1 dup key: { name: "admin" }
+    at InsertOneOperation.handleOk (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at executeOperationWithRetries (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongodb\lib\operations\execute_operation.js:194:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async executeOperation (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async Collection.insertOne (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongodb\lib\collection.js:154:16)
+    at async model.$__save (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\model.js:434:16)
+    at async maybeTracedSave (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\model.js:675:7)
+    at async model.create (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\model.js:2763:5)
+    at async C:\Users\Luis Chochom\Documents\medpro\backend\controllers\RoleController.js:33:16
+
+[2026-06-23T23:50:50.663Z] POST /api/v1/permissions - Status: 409 - Error: Registro duplicado. Ya existe un documento con este valor.
+Stack: MongoServerError: E11000 duplicate key error collection: medpro.permissions index: name_1 dup key: { name: "pacientes.create" }
+    at InsertOneOperation.handleOk (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at executeOperationWithRetries (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongodb\lib\operations\execute_operation.js:194:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async executeOperation (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async Collection.insertOne (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongodb\lib\collection.js:154:16)
+    at async model.$__save (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\model.js:434:16)
+    at async maybeTracedSave (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\model.js:675:7)
+    at async model.create (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\model.js:2763:5)
+    at async C:\Users\Luis Chochom\Documents\medpro\backend\controllers\PermissionController.js:32:22
+
+[2026-06-23T23:50:51.098Z] POST /api/v1/medicos - Status: 400 - Error: El correo electrónico ya está en uso
+Stack: Error: El correo electrónico ya está en uso
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\MedicoController.js:47:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-23T23:50:51.325Z] POST /api/v1/citas - Status: 404 - Error: Recurso no encontrado
+Stack: CastError: Cast to ObjectId failed for value "ID_DEL_MEDICO" (type string) at path "_id" for model "Medico"
+    at SchemaObjectId.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schema\objectId.js:252:11)
+    at SchemaType.applySetters (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1373:12)
+    at SchemaType.castForQuery (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1793:17)
+    at cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\cast.js:386:32)
+    at Query.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:5228:12)
+    at Query._castConditions (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2411:10)
+    at model.Query._findOne (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2758:8)
+    at maybeTracedQueryExec (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:4801:83)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\Luis Chochom\Documents\medpro\backend\controllers\CitaController.js:55:18
+
+[2026-06-23T23:50:51.514Z] POST /api/v1/consultas - Status: 404 - Error: Recurso no encontrado
+Stack: CastError: Cast to ObjectId failed for value "ID_DE_LA_CITA" (type string) at path "cita_id" for model "Consulta"
+    at SchemaObjectId.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schema\objectId.js:252:11)
+    at SchemaType.applySetters (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1373:12)
+    at SchemaType.castForQuery (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1793:17)
+    at cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\cast.js:386:32)
+    at Query.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:5228:12)
+    at Query._castConditions (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2411:10)
+    at model.Query._findOne (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2758:8)
+    at maybeTracedQueryExec (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:4801:83)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\Luis Chochom\Documents\medpro\backend\controllers\ConsultaController.js:44:31
+
+[2026-06-23T23:50:51.738Z] POST /api/v1/recetas - Status: 404 - Error: Recurso no encontrado
+Stack: CastError: Cast to ObjectId failed for value "ID_DE_LA_CONSULTA" (type string) at path "_id" for model "Consulta"
+    at SchemaObjectId.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schema\objectId.js:252:11)
+    at SchemaType.applySetters (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1373:12)
+    at SchemaType.castForQuery (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1793:17)
+    at cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\cast.js:386:32)
+    at Query.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:5228:12)
+    at Query._castConditions (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2411:10)
+    at model.Query._findOne (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2758:8)
+    at maybeTracedQueryExec (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:4801:83)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\Luis Chochom\Documents\medpro\backend\controllers\RecetaController.js:48:20
+
+[2026-06-23T23:50:51.827Z] GET /api/v1/documentos?paciente_id=ID_DEL_PACIENTE - Status: 404 - Error: Recurso no encontrado
+Stack: CastError: Cast to ObjectId failed for value "ID_DEL_PACIENTE" (type string) at path "paciente_id" for model "Documento"
+    at SchemaObjectId.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schema\objectId.js:252:11)
+    at SchemaType.applySetters (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1373:12)
+    at SchemaType.castForQuery (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1793:17)
+    at cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\cast.js:386:32)
+    at Query.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:5228:12)
+    at Query._castConditions (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2411:10)
+    at model.Query._find (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2438:8)
+    at maybeTracedQueryExec (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:4801:83)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\Luis Chochom\Documents\medpro\backend\controllers\DocumentoController.js:58:22
+
+[2026-06-23T23:50:51.938Z] POST /api/v1/documentos/upload - Status: 400 - Error: Por favor adjunte un archivo
+Stack: Error: Por favor adjunte un archivo
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\DocumentoController.js:16:11
+    at asyncUtilWrap (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\express-async-handler\index.js:3:20)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at done (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\multer\lib\make-middleware.js:70:7)
+    at indicateDone (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\multer\lib\make-middleware.js:74:68)
+    at Multipart.<anonymous> (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\multer\lib\make-middleware.js:258:7)
+    at Multipart.emit (node:events:509:28)
+    at emitCloseNT (node:internal/streams/destroy:148:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+
+[2026-06-24T00:28:11.362Z] POST /api/v1/citas - Status: 422 - Error: La cita está fuera del horario de atención del médico (08:00 - 16:00)
+Stack: Error: La cita está fuera del horario de atención del médico (08:00 - 16:00)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\CitaController.js:75:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T00:59:20.384Z] GET /api/v1/documentos - Status: 400 - Error: paciente_id es requerido como parámetro de búsqueda
+Stack: Error: paciente_id es requerido como parámetro de búsqueda
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\DocumentoController.js:55:11
+    at asyncUtilWrap (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\express-async-handler\index.js:3:20)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+
+[2026-06-24T00:59:20.419Z] GET /api/v1/documentos - Status: 400 - Error: paciente_id es requerido como parámetro de búsqueda
+Stack: Error: paciente_id es requerido como parámetro de búsqueda
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\DocumentoController.js:55:11
+    at asyncUtilWrap (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\express-async-handler\index.js:3:20)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+
+[2026-06-24T00:59:54.600Z] GET /api/v1/documentos - Status: 400 - Error: paciente_id es requerido como parámetro de búsqueda
+Stack: Error: paciente_id es requerido como parámetro de búsqueda
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\DocumentoController.js:55:11
+    at asyncUtilWrap (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\express-async-handler\index.js:3:20)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+
+[2026-06-24T00:59:54.629Z] GET /api/v1/documentos - Status: 400 - Error: paciente_id es requerido como parámetro de búsqueda
+Stack: Error: paciente_id es requerido como parámetro de búsqueda
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\DocumentoController.js:55:11
+    at asyncUtilWrap (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\express-async-handler\index.js:3:20)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+
+[2026-06-24T01:14:32.572Z] POST /api/v1/citas - Status: 422 - Error: La cita está fuera del horario de atención del médico (08:00 - 16:00)
+Stack: Error: La cita está fuera del horario de atención del médico (08:00 - 16:00)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\CitaController.js:75:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T01:14:38.586Z] POST /api/v1/citas - Status: 422 - Error: La cita está fuera del horario de atención del médico (08:00 - 16:00)
+Stack: Error: La cita está fuera del horario de atención del médico (08:00 - 16:00)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\CitaController.js:75:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T01:14:39.099Z] POST /api/v1/citas - Status: 422 - Error: La cita está fuera del horario de atención del médico (08:00 - 16:00)
+Stack: Error: La cita está fuera del horario de atención del médico (08:00 - 16:00)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\CitaController.js:75:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T01:41:33.114Z] GET /api/v1/documentos - Status: 400 - Error: paciente_id es requerido como parámetro de búsqueda
+Stack: Error: paciente_id es requerido como parámetro de búsqueda
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\DocumentoController.js:55:11
+    at asyncUtilWrap (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\express-async-handler\index.js:3:20)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+
+[2026-06-24T01:41:33.145Z] GET /api/v1/documentos - Status: 400 - Error: paciente_id es requerido como parámetro de búsqueda
+Stack: Error: paciente_id es requerido como parámetro de búsqueda
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\DocumentoController.js:55:11
+    at asyncUtilWrap (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\express-async-handler\index.js:3:20)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+
+[2026-06-24T04:18:41.518Z] GET /api/v1/documentos/stream/6a3b5a9d6a4c315d0db32fcc/0 - Status: 401 - Error: No autorizado, no hay token
+Stack: Error: No autorizado, no hay token
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:47:11
+    at asyncUtilWrap (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\express-async-handler\index.js:3:20)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:342:13)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:297:9
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at router.handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:186:3)
+    at router (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:60:12)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+
+[2026-06-24T04:18:47.833Z] GET /api/v1/documentos/stream/6a3b5a9d6a4c315d0db32fcc/0 - Status: 401 - Error: No autorizado, no hay token
+Stack: Error: No autorizado, no hay token
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:47:11
+    at asyncUtilWrap (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\express-async-handler\index.js:3:20)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:342:13)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:297:9
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at router.handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:186:3)
+    at router (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:60:12)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+
+[2026-06-24T04:20:08.500Z] GET /api/v1/documentos/stream/6a3b5a9d6a4c315d0db32fcc/0 - Status: 401 - Error: No autorizado, no hay token
+Stack: Error: No autorizado, no hay token
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:47:11
+    at asyncUtilWrap (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\express-async-handler\index.js:3:20)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:342:13)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:297:9
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at router.handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:186:3)
+    at router (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:60:12)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+
+[2026-06-24T15:11:08.992Z] POST /api/v1/auth/login - Status: 401 - Error: Credenciales incorrectas
+Stack: Error: Credenciales incorrectas
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\AuthController.js:60:11
+
+[2026-06-24T15:32:22.804Z] GET /api/v1/users - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:32:22.809Z] GET /api/v1/roles - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:32:23.411Z] PUT /api/v1/users/6a3bf368fbd55da1a2c521c6 - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:32:28.553Z] PUT /api/v1/users/6a3ac429959d4ca79a1b4426 - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:32:56.229Z] GET /api/v1/users - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:32:56.238Z] GET /api/v1/roles - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:32:56.417Z] GET /api/v1/users - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:32:56.424Z] GET /api/v1/roles - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:32:59.744Z] GET /api/v1/users - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:32:59.750Z] GET /api/v1/roles - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:32:59.938Z] GET /api/v1/users - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:32:59.946Z] GET /api/v1/roles - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:08.528Z] GET /api/v1/roles - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:08.550Z] GET /api/v1/permissions - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:08.699Z] GET /api/v1/roles - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:08.705Z] GET /api/v1/permissions - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:14.683Z] GET /api/v1/pacientes - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:14.880Z] GET /api/v1/pacientes - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:15.136Z] GET /api/v1/pacientes - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:15.146Z] GET /api/v1/citas - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:15.156Z] GET /api/v1/medicos - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:15.371Z] GET /api/v1/pacientes - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:15.426Z] GET /api/v1/citas - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:15.458Z] GET /api/v1/medicos - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:15.636Z] GET /api/v1/pacientes - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:15.639Z] GET /api/v1/consultas - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:15.644Z] GET /api/v1/medicos - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:15.650Z] GET /api/v1/citas?estado=Confirmada - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:15.758Z] GET /api/v1/pacientes - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:15.795Z] GET /api/v1/consultas - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:15.799Z] GET /api/v1/medicos - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:15.804Z] GET /api/v1/citas?estado=Confirmada - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:16.051Z] GET /api/v1/consultas - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:16.055Z] GET /api/v1/recetas - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:16.223Z] GET /api/v1/consultas - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:16.237Z] GET /api/v1/recetas - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:17.002Z] GET /api/v1/pacientes - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:17.008Z] GET /api/v1/documentos - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:17.184Z] GET /api/v1/pacientes - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:17.192Z] GET /api/v1/documentos - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:17.418Z] GET /api/v1/medicos - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:17.613Z] GET /api/v1/medicos - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:17.795Z] GET /api/v1/roles - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:17.803Z] GET /api/v1/permissions - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:17.981Z] GET /api/v1/roles - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:17.986Z] GET /api/v1/permissions - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:18.148Z] GET /api/v1/roles - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:18.151Z] GET /api/v1/users - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:18.331Z] GET /api/v1/roles - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:33:18.338Z] GET /api/v1/users - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:44:42.737Z] GET /api/v1/pacientes - Status: 403 - Error: Acceso denegado: Falta el permiso pacientes.view
+Stack: Error: Acceso denegado: Falta el permiso pacientes.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T15:44:42.745Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T15:44:42.785Z] GET /api/v1/citas?estado=Confirmada - Status: 403 - Error: Acceso denegado: Falta el permiso citas.view
+Stack: Error: Acceso denegado: Falta el permiso citas.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T15:44:42.824Z] GET /api/v1/pacientes - Status: 403 - Error: Acceso denegado: Falta el permiso pacientes.view
+Stack: Error: Acceso denegado: Falta el permiso pacientes.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T15:44:42.830Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T15:44:42.845Z] GET /api/v1/citas?estado=Confirmada - Status: 403 - Error: Acceso denegado: Falta el permiso citas.view
+Stack: Error: Acceso denegado: Falta el permiso citas.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T15:44:59.315Z] GET /api/v1/consultas - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:44:59.321Z] GET /api/v1/pacientes - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:44:59.349Z] GET /api/v1/medicos - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:44:59.360Z] GET /api/v1/citas?estado=Confirmada - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:44:59.389Z] GET /api/v1/consultas - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:44:59.401Z] GET /api/v1/pacientes - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:44:59.422Z] GET /api/v1/medicos - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:44:59.432Z] GET /api/v1/citas?estado=Confirmada - Status: 401 - Error: No autorizado, token fallido
+Stack: Error: No autorizado, token fallido
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:41:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T15:45:10.401Z] POST /api/v1/auth/login - Status: 401 - Error: La cuenta está inactiva
+Stack: Error: La cuenta está inactiva
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\AuthController.js:32:13
+
+[2026-06-24T15:46:25.248Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T15:46:25.277Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T15:46:26.952Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T15:46:27.031Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:41:56.789Z] POST /api/v1/citas - Status: 422 - Error: La cita está fuera del horario de atención del médico (08:00 - 16:00)
+Stack: Error: La cita está fuera del horario de atención del médico (08:00 - 16:00)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\CitaController.js:85:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T16:45:41.838Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:45:41.906Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:45:42.975Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:45:43.042Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:45:48.927Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:45:48.986Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:45:52.440Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:45:52.514Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:45:54.625Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:45:54.674Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:45:55.432Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:45:55.478Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:45:55.937Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:45:55.993Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:45:56.659Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:45:56.709Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:45:58.929Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:45:59.018Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:46:00.522Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:46:00.581Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:46:02.205Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:46:02.274Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:46:17.650Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:46:17.704Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:46:21.000Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:46:21.067Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:46:39.019Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:46:39.196Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:47:18.631Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T16:47:18.675Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-24T17:19:46.261Z] POST /api/v1/recetas - Status: 400 - Error: Esta consulta ya tiene una receta asociada
+Stack: Error: Esta consulta ya tiene una receta asociada
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\RecetaController.js:78:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T17:19:51.941Z] POST /api/v1/recetas - Status: 400 - Error: Esta consulta ya tiene una receta asociada
+Stack: Error: Esta consulta ya tiene una receta asociada
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\RecetaController.js:78:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T17:19:59.791Z] POST /api/v1/recetas - Status: 400 - Error: Esta consulta ya tiene una receta asociada
+Stack: Error: Esta consulta ya tiene una receta asociada
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\RecetaController.js:78:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+[2026-06-24T17:20:25.318Z] POST /api/v1/consultas - Status: 404 - Error: Recurso no encontrado
+Stack: CastError: Cast to ObjectId failed for value "" (type string) at path "cita_id" for model "Consulta"
+    at SchemaObjectId.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schema\objectId.js:252:11)
+    at SchemaType.applySetters (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1373:12)
+    at SchemaType.castForQuery (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1793:17)
+    at cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\cast.js:386:32)
+    at Query.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:5228:12)
+    at Query._castConditions (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2411:10)
+    at model.Query._findOne (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2758:8)
+    at maybeTracedQueryExec (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:4801:83)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\Luis Chochom\Documents\medpro\backend\controllers\ConsultaController.js:55:31
+
+[2026-06-24T17:20:31.739Z] POST /api/v1/consultas - Status: 404 - Error: Recurso no encontrado
+Stack: CastError: Cast to ObjectId failed for value "" (type string) at path "cita_id" for model "Consulta"
+    at SchemaObjectId.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schema\objectId.js:252:11)
+    at SchemaType.applySetters (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1373:12)
+    at SchemaType.castForQuery (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1793:17)
+    at cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\cast.js:386:32)
+    at Query.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:5228:12)
+    at Query._castConditions (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2411:10)
+    at model.Query._findOne (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2758:8)
+    at maybeTracedQueryExec (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:4801:83)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\Luis Chochom\Documents\medpro\backend\controllers\ConsultaController.js:55:31
+
+[2026-06-24T17:21:07.527Z] POST /api/v1/consultas - Status: 404 - Error: Recurso no encontrado
+Stack: CastError: Cast to ObjectId failed for value "" (type string) at path "cita_id" for model "Consulta"
+    at SchemaObjectId.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schema\objectId.js:252:11)
+    at SchemaType.applySetters (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1373:12)
+    at SchemaType.castForQuery (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1793:17)
+    at cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\cast.js:386:32)
+    at Query.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:5228:12)
+    at Query._castConditions (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2411:10)
+    at model.Query._findOne (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2758:8)
+    at maybeTracedQueryExec (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:4801:83)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\Luis Chochom\Documents\medpro\backend\controllers\ConsultaController.js:55:31
+
+[2026-06-24T17:21:30.536Z] POST /api/v1/consultas - Status: 404 - Error: Recurso no encontrado
+Stack: CastError: Cast to ObjectId failed for value "" (type string) at path "cita_id" for model "Consulta"
+    at SchemaObjectId.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schema\objectId.js:252:11)
+    at SchemaType.applySetters (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1373:12)
+    at SchemaType.castForQuery (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1793:17)
+    at cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\cast.js:386:32)
+    at Query.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:5228:12)
+    at Query._castConditions (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2411:10)
+    at model.Query._findOne (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2758:8)
+    at maybeTracedQueryExec (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:4801:83)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\Luis Chochom\Documents\medpro\backend\controllers\ConsultaController.js:55:31
+
+[2026-06-24T17:25:47.857Z] POST /api/v1/consultas - Status: 404 - Error: Recurso no encontrado
+Stack: CastError: Cast to ObjectId failed for value "" (type string) at path "cita_id" for model "Consulta"
+    at SchemaObjectId.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schema\objectId.js:252:11)
+    at SchemaType.applySetters (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1373:12)
+    at SchemaType.castForQuery (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1793:17)
+    at cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\cast.js:386:32)
+    at Query.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:5228:12)
+    at Query._castConditions (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2411:10)
+    at model.Query._findOne (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2758:8)
+    at maybeTracedQueryExec (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:4801:83)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\Luis Chochom\Documents\medpro\backend\controllers\ConsultaController.js:55:31
+
+[2026-06-24T17:40:21.554Z] POST /api/v1/consultas - Status: 404 - Error: Recurso no encontrado
+Stack: CastError: Cast to ObjectId failed for value "" (type string) at path "cita_id" for model "Consulta"
+    at SchemaObjectId.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schema\objectId.js:252:11)
+    at SchemaType.applySetters (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1373:12)
+    at SchemaType.castForQuery (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1793:17)
+    at cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\cast.js:386:32)
+    at Query.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:5228:12)
+    at Query._castConditions (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2411:10)
+    at model.Query._findOne (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2758:8)
+    at maybeTracedQueryExec (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:4801:83)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\Luis Chochom\Documents\medpro\backend\controllers\ConsultaController.js:55:31
+
+[2026-06-24T17:40:22.683Z] POST /api/v1/consultas - Status: 404 - Error: Recurso no encontrado
+Stack: CastError: Cast to ObjectId failed for value "" (type string) at path "cita_id" for model "Consulta"
+    at SchemaObjectId.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schema\objectId.js:252:11)
+    at SchemaType.applySetters (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1373:12)
+    at SchemaType.castForQuery (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\schemaType.js:1793:17)
+    at cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\cast.js:386:32)
+    at Query.cast (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:5228:12)
+    at Query._castConditions (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2411:10)
+    at model.Query._findOne (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:2758:8)
+    at maybeTracedQueryExec (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\mongoose\lib\query.js:4801:83)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\Luis Chochom\Documents\medpro\backend\controllers\ConsultaController.js:55:31
+
+[2026-06-26T16:16:44.419Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:16:44.488Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:16:45.646Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:16:45.741Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:16:49.050Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:16:49.104Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:16:51.087Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:16:51.142Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:16:51.917Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:16:51.957Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:16:57.106Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:16:57.158Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:16:58.044Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:16:58.105Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:17:01.192Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:17:01.243Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:17:03.727Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:17:03.763Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:17:04.536Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:17:04.597Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:17:28.837Z] GET /api/v1/pacientes - Status: 403 - Error: Acceso denegado: Falta el permiso pacientes.view
+Stack: Error: Acceso denegado: Falta el permiso pacientes.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:17:28.842Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:17:28.885Z] GET /api/v1/pacientes - Status: 403 - Error: Acceso denegado: Falta el permiso pacientes.view
+Stack: Error: Acceso denegado: Falta el permiso pacientes.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:17:28.889Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:17:45.124Z] GET /api/v1/pacientes - Status: 403 - Error: Acceso denegado: Falta el permiso pacientes.view
+Stack: Error: Acceso denegado: Falta el permiso pacientes.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:17:45.128Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:17:45.175Z] GET /api/v1/pacientes - Status: 403 - Error: Acceso denegado: Falta el permiso pacientes.view
+Stack: Error: Acceso denegado: Falta el permiso pacientes.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:17:45.180Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:20.812Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:20.823Z] GET /api/v1/pacientes - Status: 403 - Error: Acceso denegado: Falta el permiso pacientes.view
+Stack: Error: Acceso denegado: Falta el permiso pacientes.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:20.888Z] GET /api/v1/citas?estado=Confirmada - Status: 403 - Error: Acceso denegado: Falta el permiso citas.view
+Stack: Error: Acceso denegado: Falta el permiso citas.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:20.920Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:20.930Z] GET /api/v1/pacientes - Status: 403 - Error: Acceso denegado: Falta el permiso pacientes.view
+Stack: Error: Acceso denegado: Falta el permiso pacientes.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:20.941Z] GET /api/v1/citas?estado=Confirmada - Status: 403 - Error: Acceso denegado: Falta el permiso citas.view
+Stack: Error: Acceso denegado: Falta el permiso citas.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:24.694Z] GET /api/v1/pacientes - Status: 403 - Error: Acceso denegado: Falta el permiso pacientes.view
+Stack: Error: Acceso denegado: Falta el permiso pacientes.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:24.699Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:24.707Z] GET /api/v1/citas?estado=Confirmada - Status: 403 - Error: Acceso denegado: Falta el permiso citas.view
+Stack: Error: Acceso denegado: Falta el permiso citas.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:24.769Z] GET /api/v1/pacientes - Status: 403 - Error: Acceso denegado: Falta el permiso pacientes.view
+Stack: Error: Acceso denegado: Falta el permiso pacientes.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:24.777Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:24.789Z] GET /api/v1/citas?estado=Confirmada - Status: 403 - Error: Acceso denegado: Falta el permiso citas.view
+Stack: Error: Acceso denegado: Falta el permiso citas.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:36.627Z] GET /api/v1/pacientes - Status: 403 - Error: Acceso denegado: Falta el permiso pacientes.view
+Stack: Error: Acceso denegado: Falta el permiso pacientes.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:36.680Z] GET /api/v1/pacientes - Status: 403 - Error: Acceso denegado: Falta el permiso pacientes.view
+Stack: Error: Acceso denegado: Falta el permiso pacientes.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:38.772Z] GET /api/v1/pacientes - Status: 403 - Error: Acceso denegado: Falta el permiso pacientes.view
+Stack: Error: Acceso denegado: Falta el permiso pacientes.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:38.779Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:38.787Z] GET /api/v1/citas?estado=Confirmada - Status: 403 - Error: Acceso denegado: Falta el permiso citas.view
+Stack: Error: Acceso denegado: Falta el permiso citas.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:38.861Z] GET /api/v1/pacientes - Status: 403 - Error: Acceso denegado: Falta el permiso pacientes.view
+Stack: Error: Acceso denegado: Falta el permiso pacientes.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:38.876Z] GET /api/v1/citas?estado=Confirmada - Status: 403 - Error: Acceso denegado: Falta el permiso citas.view
+Stack: Error: Acceso denegado: Falta el permiso citas.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:18:38.882Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:19:03.091Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:19:03.096Z] GET /api/v1/citas?estado=Confirmada - Status: 403 - Error: Acceso denegado: Falta el permiso citas.view
+Stack: Error: Acceso denegado: Falta el permiso citas.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:19:03.150Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:19:03.156Z] GET /api/v1/citas?estado=Confirmada - Status: 403 - Error: Acceso denegado: Falta el permiso citas.view
+Stack: Error: Acceso denegado: Falta el permiso citas.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:19:18.534Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:19:18.543Z] GET /api/v1/citas?estado=Confirmada - Status: 403 - Error: Acceso denegado: Falta el permiso citas.view
+Stack: Error: Acceso denegado: Falta el permiso citas.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:19:18.594Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:19:18.602Z] GET /api/v1/citas?estado=Confirmada - Status: 403 - Error: Acceso denegado: Falta el permiso citas.view
+Stack: Error: Acceso denegado: Falta el permiso citas.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:20:31.408Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:20:31.462Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:20:32.429Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:20:32.510Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:20:36.440Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:20:36.525Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:20:38.302Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:20:38.369Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:52:30.221Z] POST /api/v1/auth/login - Status: 401 - Error: Credenciales incorrectas
+Stack: Error: Credenciales incorrectas
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\AuthController.js:60:11
+
+[2026-06-26T16:52:41.024Z] POST /api/v1/auth/login - Status: 401 - Error: Credenciales incorrectas
+Stack: Error: Credenciales incorrectas
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\AuthController.js:60:11
+
+[2026-06-26T16:53:10.352Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:53:10.510Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:53:40.824Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:53:40.864Z] GET /api/v1/medicos - Status: 403 - Error: Acceso denegado: Falta el permiso medicos.view
+Stack: Error: Acceso denegado: Falta el permiso medicos.view
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\roleMiddleware.js:42:13
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\Luis Chochom\Documents\medpro\backend\node_modules\router\index.js:291:5)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\middlewares\authMiddleware.js:37:7
+
+[2026-06-26T16:54:18.608Z] POST /api/v1/citas - Status: 422 - Error: La cita está fuera del horario de atención del médico (08:00 - 16:00)
+Stack: Error: La cita está fuera del horario de atención del médico (08:00 - 16:00)
+    at C:\Users\Luis Chochom\Documents\medpro\backend\controllers\CitaController.js:85:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
